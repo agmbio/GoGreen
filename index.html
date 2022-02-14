@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Go Green</title>
+</head>
+<style>
+  canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#one {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+
+body {
+  
+}
+
+a {
+  text-decoration: none;
+  position: absolute;
+  right: 300px;
+  top: 15px;
+}
+</style>
+<body>
+  <p id="demo">Clicks</p>
+  <p id=one>There is a 1 in a 10000000 probability</p>
+  <a href="" >Information</a>
+  <canvas>
+  </canvas>
+</body>
+<script>
+  
+  var canvas = document.querySelector("canvas")
+  canvas.style.background = "blue"
+  var tap = 0
+
+
+canvas.onclick = function () {click()};
+
+  
+function click() {
+ canvas.style.background = "grey"
+ 
+  tap++
+ document.getElementById("demo").innerHTML = tap;
+  
+    let x = Math.round(Math.random() * 10000000);
+    if (x<2) {
+    canvas.style.background = "green"
+  }
+}
+  
+</script>
+</html>
